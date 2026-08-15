@@ -1,76 +1,104 @@
-// ---------- Mobile nav toggle ----------
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+// ---------- HAMBURGER TOGGLE ----------
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  // Close the menu after a link is tapped
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
     });
-  });
+
+    // Close menu on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    });
 }
 
-// ---------- Scroll-reveal for project cards ----------
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealTargets = document.querySelectorAll('.project-card');
+// ---------- FAQ ACCORDION ----------
+const faqItems = document.querySelectorAll('.faq-item');
 
-if (revealTargets.length && !prefersReducedMotion && 'IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        // slight stagger based on position in the grid
-        setTimeout(() => entry.target.classList.add('in-view'), i * 60);
-        revealObserver.unobserve(entry.target);
-      }
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+        // Close all other open items
+        faqItems.forEach(other => {
+            if (other !== item) {
+                other.classList.remove('active');
+                other.querySelector('.faq-answer').classList.remove('open');
+            }
+        });
+
+        item.classList.toggle('active');
+        answer.classList.toggle('open');
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+});
 
-  revealTargets.forEach(el => revealObserver.observe(el));
-} else {
-  // No IntersectionObserver support or reduced motion: just show everything
-  revealTargets.forEach(el => el.classList.add('in-view'));
+// Open the first FAQ by default
+if (faqItems.length > 0) {
+    faqItems[0].classList.add('active');
+    faqItems[0].querySelector('.faq-answer').classList.add('open');
 }
 
-// ---------- Back-to-top button ----------
-const toTopBtn = document.querySelector('.to-top');
+// ---------- CONTACT FORM (Formspree — free API, no backend needed) ----------
+// 1. Go to https://formspree.io and sign up free (no credit card).
+// 2. Create a new form — Formspree gives you an endpoint like:
+//    https://formspree.io/f/abcdwxyz
+// 3. Paste that endpoint below in place of "YOUR_FORM_ID".
+// Free tier currently allows 50 submissions/month, delivered straight to your inbox.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
 
-if (toTopBtn) {
-  const toggleToTop = () => {
-    toTopBtn.classList.toggle('visible', window.scrollY > 600);
-  };
-  window.addEventListener('scroll', toggleToTop, { passive: true });
-  toggleToTop();
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
 
-  toTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-  });
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+
+        // Guard: remind whoever is testing this locally to add their endpoint
+        if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+            showStatus('error', 'Contact form is not connected yet — add your free Formspree endpoint in script.js.');
+            return;
+        }
+
+        showStatus('sending', 'Sending your message...');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                showStatus('success', "Thanks! Your message is on its way — we'll get back to you soon.");
+                contactForm.reset();
+            } else {
+                const data = await response.json().catch(() => null);
+                const msg = (data && data.errors && data.errors.map(er => er.message).join(', ')) ||
+                    'Something went wrong sending your message. Please try again.';
+                showStatus('error', msg);
+            }
+        } catch (err) {
+            showStatus('error', 'Network error — please check your connection and try again.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        }
+    });
 }
 
-// ---------- Highlight active nav link while scrolling ----------
-const sections = document.querySelectorAll('main section[id], section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-
-if (sections.length && navAnchors.length && 'IntersectionObserver' in window) {
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-      if (!link) return;
-      if (entry.isIntersecting) {
-        navAnchors.forEach(a => a.style.color = '');
-        link.style.color = '#f4f5fa';
-      }
-    });
-  }, { threshold: 0.4 });
-
-  sections.forEach(section => navObserver.observe(section));
+function showStatus(type, message) {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.className = `form-status show ${type}`;
 }
