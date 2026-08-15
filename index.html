@@ -1,230 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maurax — Built to Rise</title>
-<link rel="icon" href="maurax-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maurax Pvt. Limited | Professional Digital Solutions</title>
+    <meta name="description" content="Maurax Pvt. Limited provides professional website development and digital solutions designed to help small and growing businesses build a strong online presence.">
+    <link rel="icon" href="maurax-icon.png">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <nav>
-    <div class="brand">
-      <img src="Maurax.jpeg" alt="Maurax mark">
-      <span>MAURAX</span>
-    </div>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-    </div>
-    <a href="#pricing" class="btn btn-primary">Start a project</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-blade-bg"></div>
-  <div class="wrap hero-inner">
-    <img class="hero-mark" src="Maurax.jpeg" alt="Maurax">
-    <h1>
-      <span class="line">Built to</span>
-      <span class="line grad-text">rise.</span>
-    </h1>
-    <p class="sub">Maurax is a product studio that turns ambitious ideas into fast, reliable software — from the first prototype to a launch you can stand behind.</p>
-    <div class="hero-ctas">
-      <a href="#pricing" class="btn btn-primary">Start a project</a>
-      <a href="#work" class="btn btn-ghost">See our work</a>
-    </div>
-    <div class="cap-strip mono">
-      <span>PRODUCT ENGINEERING</span>
-      <span>SYSTEM DESIGN</span>
-      <span>AI INTEGRATION</span>
-      <span>CLOUD INFRASTRUCTURE</span>
-    </div>
-  </div>
-</section>
-
-<div class="blade-wrap"><div class="blade"></div></div>
-
-<section id="work">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Showcase — demo builds</div>
-        <h2>A few things<br>we've shipped.</h2>
-      </div>
-      <p>Selected demo projects built to show how we work — from live dashboards to developer tooling. Every build starts small and ships fast.</p>
-    </div>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-top">
-          <h3>Pulse</h3>
-          <span class="demo-badge">DEMO</span>
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo"><img src="maurax-icon.png" alt="Maurax"> Maurax<span>.</span></div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Why Us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="btn" style="padding: 8px 20px;">Contact</a></li>
+            </ul>
         </div>
-        <p>A real-time analytics dashboard that surfaces product metrics the moment they happen, built for teams who don't want to wait for tomorrow's report.</p>
-        <div class="tags"><span>React</span><span>WebSockets</span><span>D3.js</span></div>
-      </div>
+    </header>
 
-      <div class="project-card">
-        <div class="project-top">
-          <h3>Forge</h3>
-          <span class="demo-badge">DEMO</span>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <img class="hero-mark" src="maurax-icon.png" alt="Maurax">
+            <div class="hero-badge"><i class="fas fa-check-circle"></i> 100% Mobile Responsive</div>
+            <h1>Your Business.<br><span>Our Digital</span> Expertise.</h1>
+            <p>Professional, affordable and modern digital solutions designed to help local businesses build their online presence and reach more customers.</p>
+            <div class="hero-ctas">
+                <a href="#pricing" class="btn">Get Started</a>
+                <a href="#work" class="btn btn-outline">See Our Work</a>
+            </div>
         </div>
-        <p>An API orchestration layer that connects a dozen backend services behind one clean, consistent interface — so front-end teams stop babysitting integrations.</p>
-        <div class="tags"><span>Node.js</span><span>GraphQL</span><span>Redis</span></div>
-      </div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-top">
-          <h3>Nimbus</h3>
-          <span class="demo-badge">DEMO</span>
+    <!-- FEATURES / WHY IT MATTERS -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Built for Businesses <span class="highlight">That Want to Grow</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><i class="fas fa-building"></i><h3>Professional Presence</h3><p>Build credibility with a professional online presence.</p></div>
+                <div class="feature-card"><i class="fas fa-mobile-alt"></i><h3>Mobile Friendly</h3><p>Give customers a smooth experience on every device.</p></div>
+                <div class="feature-card"><i class="fas fa-users"></i><h3>Customer Connection</h3><p>Make it easy for customers to contact your business.</p></div>
+                <div class="feature-card"><i class="fas fa-wallet"></i><h3>Affordable Solutions</h3><p>Digital solutions designed for growing businesses.</p></div>
+            </div>
         </div>
-        <p>A one-command CLI for spinning up and tearing down full cloud environments, built to take infrastructure setup from an afternoon down to a minute.</p>
-        <div class="tags"><span>Go</span><span>Docker</span><span>Terraform</span></div>
-      </div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-top">
-          <h3>Vertex</h3>
-          <span class="demo-badge">DEMO</span>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container about-wrapper">
+            <div class="about-text">
+                <h2>Helping Local Businesses <span class="highlight">Go Digital.</span></h2>
+                <p>Maurax Pvt. Limited is a digital services company focused on helping small and growing businesses establish a professional online presence. We combine modern design, practical technology and business-focused thinking to create digital solutions that are simple, effective and accessible.</p>
+                <p>Our goal is not simply to build websites. We help businesses present themselves professionally, connect with customers and create a strong foundation for digital growth.</p>
+                <div class="about-stats">
+                    <div class="stat"><i class="fas fa-mobile-alt"></i> <div><strong>100%</strong><br>Mobile Responsive</div></div>
+                    <div class="stat"><i class="fas fa-layer-group"></i> <div><strong>3+</strong><br>Digital Service Categories</div></div>
+                    <div class="stat"><i class="fas fa-clock"></i> <div><strong>24/7</strong><br>Online Business Presence</div></div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="maurax-icon.png" alt="Maurax mark">
+            </div>
         </div>
-        <p>An AI-assisted code review tool that flags risk and regressions before a pull request ever reaches a human reviewer.</p>
-        <div class="tags"><span>Python</span><span>LLM</span><span>GitHub Actions</span></div>
-      </div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-top">
-          <h3>Beacon</h3>
-          <span class="demo-badge">DEMO</span>
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Digital Solutions <span class="highlight">for Growing Businesses</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card"><h4>Business Website Development</h4><p>Professional websites designed specifically for local businesses.</p></div>
+                <div class="service-card"><h4>E-Commerce Websites</h4><p>Online stores that allow businesses to showcase and sell products online.</p></div>
+                <div class="service-card"><h4>Website Maintenance</h4><p>Regular updates, content changes, backups and basic technical maintenance.</p></div>
+                <div class="service-card"><h4>Basic SEO</h4><p>Search-engine-friendly structure and basic optimization to improve visibility.</p></div>
+                <div class="service-card"><h4>Google Business Profile Assistance</h4><p>Help businesses establish and improve their presence on Google.</p></div>
+                <div class="service-card"><h4>Digital Branding</h4><p>Website identity, graphics and online presentation for a cohesive brand.</p></div>
+            </div>
         </div>
-        <p>A lightweight incident-status page that keeps customers informed the moment something breaks, with updates that post themselves from your alerts.</p>
-        <div class="tags"><span>Next.js</span><span>Postgres</span><span>Cron</span></div>
-      </div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-top">
-          <h3>Ledger</h3>
-          <span class="demo-badge">DEMO</span>
+    <!-- DIFFERENCE -->
+    <section class="difference" id="difference">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Businesses <span class="highlight">Choose Maurax</span></h2>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-item"><span class="num">01</span><h4>Business-Focused Design</h4><p>We design websites around the customer's business and goals.</p></div>
+                <div class="diff-item"><span class="num">02</span><h4>Affordable Pricing</h4><p>Professional digital solutions without unnecessary complexity.</p></div>
+                <div class="diff-item"><span class="num">03</span><h4>Mobile-First Experience</h4><p>Websites designed to work smoothly across smartphones, tablets and computers.</p></div>
+                <div class="diff-item"><span class="num">04</span><h4>Clear Communication</h4><p>Simple and transparent communication throughout the project.</p></div>
+                <div class="diff-item"><span class="num">05</span><h4>Custom Solutions</h4><p>We recommend solutions based on the individual needs of each business.</p></div>
+                <div class="diff-item"><span class="num">06</span><h4>Ongoing Support</h4><p>We remain available for updates and maintenance after launch.</p></div>
+            </div>
         </div>
-        <p>A reconciliation engine that matches transactions across payment providers in real time, so finance teams stop closing the books with spreadsheets.</p>
-        <div class="tags"><span>Rust</span><span>Kafka</span><span>gRPC</span></div>
-      </div>
-    </div>
+    </section>
 
-    <p class="showcase-note">These are concept demos built to illustrate range and craft — happy to walk through the code or spin up a live version on request.</p>
-  </div>
-</section>
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It <span class="highlight">Works</span></h2>
+            </div>
+            <div class="process-steps">
+                <div class="step"><h4>Consultation</h4><p>We understand your business and requirements.</p></div>
+                <div class="step"><h4>Planning</h4><p>We plan the website structure, content and design.</p></div>
+                <div class="step"><h4>Development</h4><p>Our team builds and optimizes your website.</p></div>
+                <div class="step"><h4>Launch</h4><p>After approval, your website goes live and your business is ready to grow online.</p></div>
+            </div>
+        </div>
+    </section>
 
-<div class="blade-wrap"><div class="blade"></div></div>
+    <!-- WORK -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="section-title">
+                <h2>Selected <span class="highlight">Work</span></h2>
+                <p>Demo concepts crafted to show the range of experiences we build for local businesses.</p>
+            </div>
+            <div class="work-grid">
+                <div class="work-item"><div class="demo-icon"><i class="fas fa-utensils"></i></div><h4>Restaurant Website</h4><p>A warm, appetite-led site with menu, gallery and reservations.</p></div>
+                <div class="work-item"><div class="demo-icon"><i class="fas fa-tshirt"></i></div><h4>Clothing Store Website</h4><p>A clean lookbook-style storefront built to showcase collections.</p></div>
+                <div class="work-item"><div class="demo-icon"><i class="fas fa-spa"></i></div><h4>Salon Website</h4><p>An elegant booking-focused presence for beauty & wellness.</p></div>
+                <div class="work-item"><div class="demo-icon"><i class="fas fa-dumbbell"></i></div><h4>Gym Website</h4><p>A bold, high-energy layout with classes and membership plans.</p></div>
+                <div class="work-item"><div class="demo-icon"><i class="fas fa-store"></i></div><h4>Local Business Website</h4><p>A trustworthy one-page presence with map and contact.</p></div>
+                <div class="work-item"><div class="demo-icon"><i class="fas fa-th-list"></i></div><h4>Product Catalogue</h4><p>A structured catalogue to browse products by category.</p></div>
+            </div>
+            <p class="work-note">These are concept demos built to show range and craft — happy to walk through examples closer to your industry.</p>
+        </div>
+    </section>
 
-<section id="pricing">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Plans</div>
-        <h2>Choose how<br>you rise.</h2>
-      </div>
-      <p>Three ways to work with Maurax — from a single scoped project to an ongoing build partner embedded in your team.</p>
-    </div>
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple, Transparent <span class="highlight">Pricing</span></h2>
+            </div>
+            <div class="pricing-grid">
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <h4>Starter</h4>
+                    <div class="price">₹2,999</div>
+                    <p class="plan-desc">For businesses that need a simple online presence.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i>1-page website</li>
+                        <li><i class="fas fa-check"></i>Mobile responsive design</li>
+                        <li><i class="fas fa-check"></i>Business information</li>
+                        <li><i class="fas fa-check"></i>Photos/gallery</li>
+                        <li><i class="fas fa-check"></i>WhatsApp button</li>
+                        <li><i class="fas fa-check"></i>Google Maps</li>
+                        <li><i class="fas fa-check"></i>Social media links</li>
+                        <li><i class="fas fa-check"></i>Basic SEO</li>
+                        <li><i class="fas fa-check"></i>1 revision</li>
+                    </ul>
+                    <a href="#contact" class="btn">Choose Starter</a>
+                </div>
 
-    <div class="pricing-grid">
+                <!-- Business (Popular) -->
+                <div class="pricing-card popular">
+                    <span class="badge-popular">Most Popular</span>
+                    <h4>Business</h4>
+                    <div class="price">₹5,999</div>
+                    <p class="plan-desc">For businesses looking for a complete professional website.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Up to 5 pages</li>
+                        <li><i class="fas fa-check"></i>Mobile responsive design</li>
+                        <li><i class="fas fa-check"></i>Products/services section</li>
+                        <li><i class="fas fa-check"></i>Gallery</li>
+                        <li><i class="fas fa-check"></i>WhatsApp integration</li>
+                        <li><i class="fas fa-check"></i>Google Maps</li>
+                        <li><i class="fas fa-check"></i>Contact form</li>
+                        <li><i class="fas fa-check"></i>Social media integration</li>
+                        <li><i class="fas fa-check"></i>Basic SEO</li>
+                        <li><i class="fas fa-check"></i>2 revisions</li>
+                        <li><i class="fas fa-check"></i>30 days support</li>
+                    </ul>
+                    <a href="#contact" class="btn">Choose Business</a>
+                </div>
 
-      <div class="plan">
-        <div class="plan-name mono">Basic</div>
-        <div class="plan-price">₹39,000<span>/mo</span></div>
-        <p class="plan-desc">For getting a first idea off the ground and in front of real users.</p>
-        <ul class="plan-features">
-          <li>1 active project</li>
-          <li>Core product build</li>
-          <li>Weekly progress updates</li>
-          <li>Email support</li>
-          <li>Standard delivery timeline</li>
-        </ul>
-        <a href="#" class="btn btn-ghost btn-block">Start Basic</a>
-      </div>
+                <!-- Premium -->
+                <div class="pricing-card">
+                    <h4>Premium</h4>
+                    <div class="price">₹9,999</div>
+                    <p class="plan-desc">For businesses requiring a larger and more customized website.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Up to 10 pages</li>
+                        <li><i class="fas fa-check"></i>Custom design</li>
+                        <li><i class="fas fa-check"></i>Advanced product catalogue</li>
+                        <li><i class="fas fa-check"></i>Gallery</li>
+                        <li><i class="fas fa-check"></i>WhatsApp integration</li>
+                        <li><i class="fas fa-check"></i>Google Maps</li>
+                        <li><i class="fas fa-check"></i>Contact form</li>
+                        <li><i class="fas fa-check"></i>Advanced SEO setup</li>
+                        <li><i class="fas fa-check"></i>Social media integration</li>
+                        <li><i class="fas fa-check"></i>3 revisions</li>
+                        <li><i class="fas fa-check"></i>60 days support</li>
+                    </ul>
+                    <a href="#contact" class="btn">Choose Premium</a>
+                </div>
+            </div>
+            <p class="pricing-note">Domain and hosting charges are separate unless specifically included in the project proposal.</p>
+        </div>
+    </section>
 
-      <div class="plan plan-elite">
-        <div class="plan-badge">Most popular</div>
-        <div class="plan-name mono">Elite</div>
-        <div class="plan-price">₹99,000<span>/mo</span></div>
-        <p class="plan-desc">For teams ready to scale, with a dedicated pod moving alongside you.</p>
-        <ul class="plan-features">
-          <li>Up to 3 active projects</li>
-          <li>Dedicated build pod — design + engineering</li>
-          <li>Twice-weekly syncs</li>
-          <li>Priority support, under 24h response</li>
-          <li>Expedited delivery timeline</li>
-          <li>Core infrastructure & DevOps included</li>
-        </ul>
-        <a href="#" class="btn btn-primary btn-block">Go Elite</a>
-      </div>
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Questions, <span class="highlight">Answered</span></h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What services does Maurax offer? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">We offer website development, e-commerce solutions, SEO, Google Business Profile assistance, digital branding, and website maintenance tailored for growing businesses.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How much does a website cost? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Our pricing starts at ₹2,999 for a starter website, with Business and Premium packages available for more advanced needs. Domain and hosting are separate unless included in a custom proposal.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer ongoing support? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Yes, we provide post-launch support for 30 to 60 days depending on the package, and we remain available for updates and maintenance after that.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are your websites mobile friendly? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Absolutely. Every website we build is 100% mobile responsive and designed to work smoothly on all devices, from smartphones to desktops.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="plan">
-        <div class="plan-name mono">Premium</div>
-        <div class="plan-price">₹2,29,000<span>/mo</span></div>
-        <p class="plan-desc">For funded teams building at full speed, with senior coverage end to end.</p>
-        <ul class="plan-features">
-          <li>Unlimited active projects</li>
-          <li>Senior-only build team</li>
-          <li>Daily standups + shared Slack channel</li>
-          <li>24/7 priority support</li>
-          <li>Custom infrastructure, security & compliance review</li>
-          <li>Dedicated technical account lead</li>
-        </ul>
-        <a href="#" class="btn btn-ghost btn-block">Talk about Premium</a>
-      </div>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Build Your <span class="highlight">Online Presence</span></h2>
+                <p>Tell us a bit about your business and we'll get back to you — usually within a day.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Prefer a quick chat over a form? Reach out directly.</p>
 
-    </div>
-    <p class="pricing-note">Pricing shown is illustrative — swap in your real numbers before this goes live.</p>
-  </div>
-</section>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:hello@maurax.com">hello@maurax.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>+91 00000 00000</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Response Time</strong>
+                            <span>Within 24 hours, Mon–Sat</span>
+                        </div>
+                    </div>
 
-<div class="blade-wrap"><div class="blade"></div></div>
+                    <a href="https://wa.me/910000000000" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
 
-<section id="about" class="cta-section">
-  <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Let's build</div>
-    <h2>Have an idea?<br><span class="grad-text">Let's make it rise.</span></h2>
-    <p>Tell us what you're building and we'll tell you honestly whether we're the right fit — no deck, no runaround.</p>
-    <div class="cta-buttons">
-      <a href="#pricing" class="btn btn-primary">Start a project</a>
-      <a href="https://github.com/Gameover007coder/Maurax" class="btn btn-ghost">View on GitHub</a>
-    </div>
-  </div>
-</section>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@business.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name (optional)</label>
+                            <input type="text" id="business" name="business" placeholder="Your business">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="brand">
-        <img src="Maurax.jpeg" alt="Maurax mark" style="height:26px;">
-        <span>MAURAX</span>
-      </div>
-      <div class="footer-links">
-        <a href="#work">Work</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="https://github.com/Gameover007coder/Maurax">GitHub</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 MAURAX. BUILT TO RISE.</span>
-      <span>DEMO SITE — CONTENT FOR SHOWCASE PURPOSES</span>
-    </div>
-  </div>
-</footer>
+    <!-- CTA -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2>Ready to Take Your Business Online?</h2>
+            <p>Let's build a professional digital presence for your business.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
 
-<button class="to-top" aria-label="Back to top">↑</button>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="color: var(--white);"><img src="maurax-icon.png" alt="Maurax"> Maurax<span>.</span></div>
+            <div class="footer-links">
+                <a href="#features">Why Us</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2026 Maurax Pvt. Limited. All rights reserved.</p>
+            <small>Professional Digital Solutions for Businesses</small>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
