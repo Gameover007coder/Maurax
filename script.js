@@ -156,7 +156,7 @@ const CONTACT_CONFIG = {
   method: 'POST',
   // If your endpoint expects JSON instead of multipart form-data, set to true.
   sendAsJson: false,
-  fallbackEmail: 'hello@maurax.com'
+  fallbackEmail: 'maurax@gmail.com'
 };
 
 const contactForm = document.getElementById('contactForm');
