@@ -576,6 +576,7 @@ section{padding:96px 0;position:relative;z-index:1;}
   gap:22px;
   align-items:stretch;
 }
+.pricing-grid-4{grid-template-columns:repeat(4,1fr);}
 .pricing-card{
   position:relative;
   background:var(--surface);
@@ -616,9 +617,15 @@ section{padding:96px 0;position:relative;z-index:1;}
 .pricing-card h4{font-size:17px;margin-bottom:14px;color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
 .pricing-card .price{
   font-family:var(--font-display);
-  font-size:38px;
+  font-size:34px;
   font-weight:700;
   margin-bottom:8px;
+}
+.pricing-card .price-suffix{
+  font-family:var(--font-body);
+  font-size:14px;
+  font-weight:500;
+  color:var(--muted);
 }
 .pricing-card .plan-desc{
   color:var(--muted);
@@ -838,6 +845,7 @@ footer small{display:block;margin-top:6px;color:var(--muted-2);font-family:var(-
   .process-steps{grid-template-columns:repeat(2,1fr);}
   .step:nth-child(n){transform:none;}
   .pricing-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
+  .pricing-grid-4{grid-template-columns:repeat(2,1fr);max-width:none;}
   .about-wrapper{grid-template-columns:1fr;}
   .about-image{order:-1;}
   .contact-wrapper{grid-template-columns:1fr;}
@@ -864,6 +872,7 @@ footer small{display:block;margin-top:6px;color:var(--muted-2);font-family:var(-
   .diff-grid{grid-template-columns:1fr;}
   .work-grid{grid-template-columns:1fr;}
   .process-steps{grid-template-columns:1fr;}
+  .pricing-grid-4{grid-template-columns:1fr;}
   .form-row{grid-template-columns:1fr;}
   .hero{padding:90px 0 60px;}
   section{padding:70px 0;}
